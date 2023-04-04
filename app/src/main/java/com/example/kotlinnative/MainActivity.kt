@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentActivity
 import com.example.kotlinnative.databinding.ActivityMainBinding
 import com.example.kotlinnative.page.VideoPageFragment
 import io.flutter.embedding.android.FlutterFragment
-
+//测试注释提交
 class MainActivity : FragmentActivity() {
 
     companion object {
