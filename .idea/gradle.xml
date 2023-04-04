@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/fijkplayer-0.10.1/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_plugin_android_lifecycle-2.0.9/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/image_picker_android-0.8.6+6/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path_provider_android-2.0.24/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_android-2.1.0/android" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/../flutter_test_module/.android/Flutter" />
+            <option value="$PROJECT_DIR$/../flutter_test_module/player/android" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
