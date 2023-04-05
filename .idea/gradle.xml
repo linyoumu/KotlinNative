@@ -9,6 +9,7 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/camera_android-0.10.5/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/fijkplayer-0.10.1/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_plugin_android_lifecycle-2.0.9/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/image_picker_android-0.8.6+6/android" />

@@ -1,5 +1,6 @@
 package com.example.kotlinnative
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -8,7 +9,7 @@ import androidx.fragment.app.FragmentActivity
 import com.example.kotlinnative.databinding.ActivityMainBinding
 import com.example.kotlinnative.page.VideoPageFragment
 import io.flutter.embedding.android.FlutterFragment
-//测试注释提交
+
 class MainActivity : FragmentActivity() {
 
     companion object {
@@ -34,6 +35,11 @@ class MainActivity : FragmentActivity() {
         FlutterFragmentUtil.createFlutterFragment(this, "mine", "/mine")
     }
 
+    private val cameraFragment by lazy {
+        // 通过懒加载创建Flutter Fragment(Android Flutter容器)
+        FlutterFragmentUtil.createFlutterFragment(this, "camera", "/camera")
+    }
+
     private var currentFragment: Fragment = homeFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +57,17 @@ class MainActivity : FragmentActivity() {
         binding.btFriend.setOnClickListener { showPage(it) }
         binding.btMessage.setOnClickListener { showPage(it) }
         binding.btMine.setOnClickListener { showPage(it) }
+
+        binding.btAdd.setOnClickListener {
+            // 添加至页面中
+            supportFragmentManager.beginTransaction().add(R.id.camera_container, cameraFragment)
+                .commit()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        currentFragment.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun showPage(view: View) {
@@ -64,7 +81,6 @@ class MainActivity : FragmentActivity() {
             if (currentFragment == it) {
                 return
             }
-
             binding.btHome.setTextColor(getColor(R.color.bottom_button_color))
             binding.btFriend.setTextColor(getColor(R.color.bottom_button_color))
             binding.btMessage.setTextColor(getColor(R.color.bottom_button_color))
@@ -88,6 +104,10 @@ class MainActivity : FragmentActivity() {
         binding.btAdd.visibility = visible
         binding.btMessage.visibility = visible
         binding.btMine.visibility = visible
+    }
+    fun closeCamera() {
+        // 移除Flutter容器
+        supportFragmentManager.beginTransaction().remove(cameraFragment).commit()
     }
 
 }

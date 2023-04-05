@@ -23,9 +23,35 @@ android {
         }
     }
 
+    //签名配置
+    signingConfigs {
+        debug {
+            keyAlias "kotlinNative"
+            keyPassword "kotlinNative"
+            storeFile file("key_store")
+            storePassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            keyAlias "kotlinNative"
+            keyPassword "kotlinNative"
+            storeFile file("key_store")
+            storePassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
     buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
