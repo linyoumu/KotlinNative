@@ -22,7 +22,7 @@ class MainActivity : FragmentActivity() {
     }
 
     private val friendFragment by lazy {
-        VideoPageFragment()
+        FlutterFragmentUtil.createFlutterFragment(this, "friend", "/friend")
     }
 
     private val messageFragment by lazy {
